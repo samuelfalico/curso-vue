@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="card">
+            <div class="player">
+                <p>Jogador</p>
+                <div class="barra-vida-player">
+                    <div class="regresso" :style="{width: width1}">
+
+                    </div>
+                </div>
+                <span id="1" v-if="width1.includes('%')">{{ width1 }}</span>
+                <span id="2" v-else>100%</span>
+            </div>
+            <div class="monster">
+                <p>Monstro</p>
+                <div class="barra-vida-monstro">
+                    <div class="regresso" :style="{width: width2}">
+
+                    </div>
+                </div>
+                <span v-if="width2.includes('%')">{{ width2 }}</span>
+                <span v-else>100%</span>
+            </div>
+        </div>
+        <div class="card" v-show="acabou">
+            <p v-if="ganhou" :style="{color: azul}">Você ganhou! :)</p>
+            <p v-if="!ganhou" :style="{color: vermelho}">Você perdeu! :(</p>
+        </div>
+        <div class="card">
+            <div class="card-button">
+                <template v-if="iniciargame">
+                    <button class="button-iniciar" @click="iniciar()">Iniciar novo jogo</button>
+                </template>
+                <template v-else>
+                    <button class="button-ataque" @click="escolha(1)">Ataque</button>
+                    <button class="button-ataqueespecial" @click="escolha(2)">Ataque Especial</button>
+                    <button class="button-curar" @click="escolha(3)">Curar</button>
+                    <button class="button-desistir" @click="desistir">Desistir</button>
+                </template>
+            </div>
+        </div>
+        <div class="card" v-show="mostrarLog">
+            <ul>
+                <li v-for="(item, i) in reverseLogs">
+                    <template v-if="(i % 2) == 0">
+                        <div class="card-log" :style="{backgroundColor: vermelho}">
+                            <p class="log1">{{ item }}</p>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div class="card-log" :style="{backgroundColor: azul}">
+                            <p class="log1">{{ item }}</p>
+                        </div>
+                    </template>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

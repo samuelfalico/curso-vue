@@ -1,0 +1,108 @@
+body {
+    background-color: rgb(239, 243, 239);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+    display: flex;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    background: white;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.barra-vida-player {
+    width: 300px;
+    height: 20px;
+    border: black 1px solid;
+}
+
+.barra-vida-monstro {
+    width: 300px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.regresso {
+	background-color: green;
+	height: 100%;
+	transition-timing-function: ease-in;
+}
+
+.card-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.card-log {
+    height: 1.5rem;
+    margin: 10px;
+    border-radius: 0.25rem;
+}
+
+.vermelho {
+    background-color: red;
+}
+
+.azul {
+    background-color: slateblue;
+}
+
+button {
+    height: 30px;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button:hover {
+    background-color: rgba(84, 141, 247, 0.3);
+}
+
+.button-ataque {
+    background-color: red;
+    color: white;
+}
+
+.button-ataqueespecial {
+    background-color: orange;
+    color: black;
+}
+
+.button-curar {
+    background-color: green;
+    color: white;
+}
+
+.button-desistir {
+    background-color: gray;
+    color: black;
+}
+
+.button-iniciar {
+    background-color: royalblue;
+    color: white;
+}
+
+ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    margin-left: 0;
+    padding: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.log1 {
+    margin: auto;
+    text-align: center;
+    color: white;
+}
